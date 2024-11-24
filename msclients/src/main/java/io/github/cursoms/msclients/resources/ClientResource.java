@@ -4,6 +4,7 @@ import io.github.cursoms.msclients.Services.ClientService;
 import io.github.cursoms.msclients.domain.Client;
 import io.github.cursoms.msclients.reprosentations.ClientSaveRequest;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
@@ -14,12 +15,14 @@ import java.util.Optional;
 @RestController
 @RequestMapping("/clients")
 @RequiredArgsConstructor
+@Slf4j
 public class ClientResource {
 
     private final ClientService service;
 
     @GetMapping
     public String status(){
+        log.info("Getting status of client microservice");
         return "ok";
     }
 

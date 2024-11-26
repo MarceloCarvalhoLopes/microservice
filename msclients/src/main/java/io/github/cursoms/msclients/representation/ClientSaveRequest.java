@@ -1,4 +1,4 @@
-package io.github.cursoms.msclients.reprosentations;
+package io.github.cursoms.msclients.representation;
 
 import io.github.cursoms.msclients.domain.Client;
 import lombok.Data;

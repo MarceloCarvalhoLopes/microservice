@@ -2,7 +2,7 @@ package io.github.cursoms.msclients.resources;
 
 import io.github.cursoms.msclients.Services.ClientService;
 import io.github.cursoms.msclients.domain.Client;
-import io.github.cursoms.msclients.reprosentations.ClientSaveRequest;
+import io.github.cursoms.msclients.representation.ClientSaveRequest;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.ResponseEntity;

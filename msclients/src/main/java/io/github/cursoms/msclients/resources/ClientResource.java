@@ -40,7 +40,7 @@ public class ClientResource {
 
     @GetMapping(params = "cpf")
     public ResponseEntity findByCpf(@RequestParam("cpf") String cpf){
-        Optional<Client> client = service.getByCpf(cpf);
+        var client = service.getByCpf(cpf);
 
         if(client.isEmpty()){
             return ResponseEntity.notFound().build();

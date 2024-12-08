@@ -13,7 +13,7 @@ import java.util.List;
 @Builder
 public class StatusClient {
 
-    private DataClient clients;
-    private List<CreditCardClient> creditCardClient;
+    private DataClient client;
+    private List<CreditCardClient> creditCard;
 
 }

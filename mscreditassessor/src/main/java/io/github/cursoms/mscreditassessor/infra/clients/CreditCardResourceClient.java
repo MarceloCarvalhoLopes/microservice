@@ -1,6 +1,7 @@
 package io.github.cursoms.mscreditassessor.infra.clients;
 
 
+import io.github.cursoms.mscreditassessor.domain.CreditCard;
 import io.github.cursoms.mscreditassessor.domain.CreditCardClient;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.http.ResponseEntity;
@@ -15,4 +16,6 @@ public interface CreditCardResourceClient {
     @GetMapping(params = "cpf")
     ResponseEntity<List<CreditCardClient>> findByCpf(@RequestParam("cpf") String cpf);
 
+    @GetMapping(params = "income")
+    ResponseEntity<List<CreditCard>> getCreditCardIncomeUntil(@RequestParam("income") Long income);
 }

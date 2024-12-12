@@ -60,7 +60,6 @@ public class CreditAssessorService {
                 DataClient dataClient = dataClientResponseEntity.getBody();
 
                 BigDecimal limitBasic = creditCard.getLimitCard();
-                BigDecimal incomeBD = BigDecimal.valueOf(income);
                 BigDecimal ageBD = BigDecimal.valueOf(dataClient.getAge());
 
                 var factor = ageBD.divide(BigDecimal.valueOf(10));

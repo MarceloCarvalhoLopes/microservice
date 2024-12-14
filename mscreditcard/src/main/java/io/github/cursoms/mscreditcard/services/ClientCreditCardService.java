@@ -1,6 +1,6 @@
 package io.github.cursoms.mscreditcard.services;
 
-import io.github.cursoms.mscreditcard.domain.ClientCreditCard;
+import io.github.cursoms.mscreditcard.domain.model.ClientCreditCard;
 import io.github.cursoms.mscreditcard.repositories.ClientCreditCardRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;

@@ -1,10 +1,12 @@
 package io.github.cursoms.mscreditassessor.services;
 
 import feign.FeignException;
-import io.github.cursoms.mscreditassessor.domain.*;
+import io.github.cursoms.mscreditassessor.domain.model.*;
 import io.github.cursoms.mscreditassessor.infra.clients.ClientResourceClient;
 import io.github.cursoms.mscreditassessor.infra.clients.CreditCardResourceClient;
+import io.github.cursoms.mscreditassessor.infra.mqueue.IssueCreditCardPublisher;
 import io.github.cursoms.mscreditassessor.services.excptions.DataClientNotFoundException;
+import io.github.cursoms.mscreditassessor.services.excptions.ErroIssueCreditCardException;
 import io.github.cursoms.mscreditassessor.services.excptions.ErrorComunicationMicroserviceException;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
@@ -13,6 +15,7 @@ import org.springframework.stereotype.Service;
 
 import java.math.BigDecimal;
 import java.util.List;
+import java.util.UUID;
 import java.util.stream.Collectors;
 
 @Service
@@ -21,6 +24,7 @@ public class CreditAssessorService {
 
     private final ClientResourceClient clientClient;
     private final CreditCardResourceClient creditCardClient;
+    private final IssueCreditCardPublisher issueCreditCardPublisher;
 
     public StatusClient getStatusClient(String cpf) throws DataClientNotFoundException,
             ErrorComunicationMicroserviceException {
@@ -84,6 +88,16 @@ public class CreditAssessorService {
         }
 
 
+    }
+
+    public ProtocolIssueCreditCard  IssueCreditCard(CreditCardApplicationIssuanceData data){
+        try {
+            issueCreditCardPublisher.IssueCreditCard(data);
+            var protocolo = UUID.randomUUID().toString();
+            return new ProtocolIssueCreditCard(protocolo);
+        }catch (Exception e){
+            throw new ErroIssueCreditCardException(e.getMessage());
+        }
     }
 
 }

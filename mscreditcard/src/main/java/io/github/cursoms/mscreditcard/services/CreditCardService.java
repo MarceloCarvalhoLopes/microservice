@@ -1,6 +1,6 @@
 package io.github.cursoms.mscreditcard.services;
 
-import io.github.cursoms.mscreditcard.domain.CreditCard;
+import io.github.cursoms.mscreditcard.domain.model.CreditCard;
 import io.github.cursoms.mscreditcard.repositories.CreditCardRepository;
 import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;

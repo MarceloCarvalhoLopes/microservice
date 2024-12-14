@@ -1,7 +1,6 @@
 package io.github.cursoms.mscreditcard.resources.representation;
 
-import io.github.cursoms.mscreditcard.domain.CardBrand;
-import io.github.cursoms.mscreditcard.domain.ClientCreditCard;
+import io.github.cursoms.mscreditcard.domain.model.ClientCreditCard;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;

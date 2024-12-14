@@ -1,4 +1,4 @@
-package io.github.cursoms.mscreditcard.domain;
+package io.github.cursoms.mscreditcard.domain.model;
 
 import jakarta.persistence.*;
 import lombok.Data;

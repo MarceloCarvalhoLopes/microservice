@@ -1,6 +1,6 @@
 package io.github.cursoms.mscreditcard.repositories;
 
-import io.github.cursoms.mscreditcard.domain.CreditCard;
+import io.github.cursoms.mscreditcard.domain.model.CreditCard;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.math.BigDecimal;

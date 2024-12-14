@@ -1,7 +1,7 @@
 package io.github.cursoms.mscreditcard.resources.representation;
 
-import io.github.cursoms.mscreditcard.domain.CardBrand;
-import io.github.cursoms.mscreditcard.domain.CreditCard;
+import io.github.cursoms.mscreditcard.domain.model.CardBrand;
+import io.github.cursoms.mscreditcard.domain.model.CreditCard;
 import lombok.Data;
 
 import java.math.BigDecimal;

@@ -1,7 +1,7 @@
 package io.github.cursoms.mscreditcard.resources;
 
-import io.github.cursoms.mscreditcard.domain.ClientCreditCard;
-import io.github.cursoms.mscreditcard.domain.CreditCard;
+import io.github.cursoms.mscreditcard.domain.model.ClientCreditCard;
+import io.github.cursoms.mscreditcard.domain.model.CreditCard;
 import io.github.cursoms.mscreditcard.resources.representation.CreditCardByClientResponse;
 import io.github.cursoms.mscreditcard.resources.representation.CreditCardSaveRequest;
 import io.github.cursoms.mscreditcard.services.ClientCreditCardService;

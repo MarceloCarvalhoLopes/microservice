@@ -1,10 +1,9 @@
 package io.github.cursoms.mscreditassessor.resources;
 
-import io.github.cursoms.mscreditassessor.domain.DataAssessment;
-import io.github.cursoms.mscreditassessor.domain.ReturnAssessmentClient;
-import io.github.cursoms.mscreditassessor.domain.StatusClient;
+import io.github.cursoms.mscreditassessor.domain.model.*;
 import io.github.cursoms.mscreditassessor.services.CreditAssessorService;
 import io.github.cursoms.mscreditassessor.services.excptions.DataClientNotFoundException;
+import io.github.cursoms.mscreditassessor.services.excptions.ErroIssueCreditCardException;
 import io.github.cursoms.mscreditassessor.services.excptions.ErrorComunicationMicroserviceException;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
@@ -46,6 +45,17 @@ public class CreditAssessorController {
             return ResponseEntity.notFound().build();
         } catch (ErrorComunicationMicroserviceException e) {
             return ResponseEntity.status(HttpStatus.resolve(e.getStatus())).body(e.getMessage());
+        }
+    }
+
+    @PostMapping("issue-creditcart")
+    public ResponseEntity issueCreditCard(@RequestBody CreditCardApplicationIssuanceData data){
+        try{
+            ProtocolIssueCreditCard protocolIssueCreditCard = assessorService
+                    .IssueCreditCard(data);
+            return ResponseEntity.ok(protocolIssueCreditCard);
+        }catch (ErroIssueCreditCardException e){
+            return ResponseEntity.internalServerError().body(e.getMessage());
         }
     }
 }

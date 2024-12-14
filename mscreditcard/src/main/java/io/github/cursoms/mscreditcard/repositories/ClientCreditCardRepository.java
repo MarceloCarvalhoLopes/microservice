@@ -1,6 +1,6 @@
 package io.github.cursoms.mscreditcard.repositories;
 
-import io.github.cursoms.mscreditcard.domain.ClientCreditCard;
+import io.github.cursoms.mscreditcard.domain.model.ClientCreditCard;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.List;

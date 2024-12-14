@@ -1,4 +1,4 @@
-package io.github.cursoms.mscreditassessor.domain;
+package io.github.cursoms.mscreditassessor.domain.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

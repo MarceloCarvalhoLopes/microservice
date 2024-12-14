@@ -1,8 +1,8 @@
 package io.github.cursoms.mscreditassessor.infra.clients;
 
 
-import io.github.cursoms.mscreditassessor.domain.CreditCard;
-import io.github.cursoms.mscreditassessor.domain.CreditCardClient;
+import io.github.cursoms.mscreditassessor.domain.model.CreditCard;
+import io.github.cursoms.mscreditassessor.domain.model.CreditCardClient;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;

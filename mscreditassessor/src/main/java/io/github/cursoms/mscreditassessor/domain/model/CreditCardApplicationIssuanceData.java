@@ -10,6 +10,6 @@ public class CreditCardApplicationIssuanceData {
     private Long id;
     private String cpf;
     private String address;
-    private BigDecimal limitReleased;
+    private BigDecimal limitCard;
 
 }

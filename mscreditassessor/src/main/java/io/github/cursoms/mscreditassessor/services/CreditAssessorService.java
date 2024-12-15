@@ -71,8 +71,8 @@ public class CreditAssessorService {
 
                 CreditCardApproved approved = new CreditCardApproved();
                 approved.setCreditCard(creditCard.getName());
-                approved.setBrand(creditCard.getCardBrand());
-                approved.setLimitApproved(limitApprovodClient);
+                approved.setCardBrand(creditCard.getCardBrand());
+                approved.setLimitCard(limitApprovodClient);
 
                 return  approved;
             }).collect(Collectors.toList());

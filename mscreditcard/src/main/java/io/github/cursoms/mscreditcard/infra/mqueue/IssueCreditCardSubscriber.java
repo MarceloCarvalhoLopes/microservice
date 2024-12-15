@@ -31,7 +31,7 @@ public class IssueCreditCardSubscriber {
             ClientCreditCard clientCreditCard = new ClientCreditCard();
             clientCreditCard.setCreditCard(creditCard);
             clientCreditCard.setCpf(data.getCpf());
-            clientCreditCard.setLimitClient(data.getLimitReleased());
+            clientCreditCard.setLimitCard(data.getLimitCard());
 
             clientCreditCardRepository.save(clientCreditCard);
 

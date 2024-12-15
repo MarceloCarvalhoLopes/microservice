@@ -13,14 +13,14 @@ import java.math.BigDecimal;
 public class CreditCardByClientResponse {
     private String name;
     private String cardBrand;
-    private BigDecimal limitReleased;
+    private BigDecimal limitCard;
 
 
     public static CreditCardByClientResponse fromModel(ClientCreditCard model) {
         return new CreditCardByClientResponse(
             model.getCreditCard().getName(),
             model.getCreditCard().getCardBrand().toString(),
-            model.getLimitClient()
+            model.getLimitCard()
         );
     }
 }

@@ -5,6 +5,8 @@ import io.github.cursoms.msclients.domain.Client;
 import io.github.cursoms.msclients.representation.ClientSaveRequest;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
@@ -18,7 +20,7 @@ import java.util.Optional;
 @Slf4j
 public class ClientResource {
 
-    private final ClientService service;
+        private final ClientService service;
 
     @GetMapping
     public String status(){

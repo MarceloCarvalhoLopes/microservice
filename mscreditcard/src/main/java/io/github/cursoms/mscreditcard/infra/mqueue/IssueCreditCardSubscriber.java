@@ -7,12 +7,14 @@ import io.github.cursoms.mscreditcard.domain.model.CreditCardApplicationIssuance
 import io.github.cursoms.mscreditcard.repositories.ClientCreditCardRepository;
 import io.github.cursoms.mscreditcard.repositories.CreditCardRepository;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.amqp.rabbit.annotation.RabbitListener;
 import org.springframework.messaging.handler.annotation.Payload;
 import org.springframework.stereotype.Component;
 
 @Component
 @RequiredArgsConstructor
+@Slf4j
 public class IssueCreditCardSubscriber {
 
     private final CreditCardRepository creditCardRepository;
@@ -36,7 +38,7 @@ public class IssueCreditCardSubscriber {
             clientCreditCardRepository.save(clientCreditCard);
 
         } catch (Exception e) {
-            e.printStackTrace();
+            log.error("Erro ao receber solicitação de emissão de cartão: {} ", e.getMessage());
         }
 
     }
